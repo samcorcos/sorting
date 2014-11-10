@@ -14,9 +14,12 @@ describe("Bubble Sort", function() {
 });
 describe("Merge Sort", function() {
   it("is able to merge two array", function() {
-    expect(merge(["x","z"],["y","a"])).toEqual(["a","x","y","z"]);
+    expect(merge(["x","z"],["a","y"])).toEqual(["a","x","y","z"]);
   });
   it("is able to split an array into two halves", function() {
-    expect(div(["a","x","y","z"])).toEqual(["a","x"],["y","z"]);
+    expect(div(["a","x","y","z"])).toEqual([["a","x"],["y","z"]]);
   })
+  it("does what it's supposed to", function() {
+    expect(mergeSort(["a","z","b","y"])).toEqual(["a","b","y","z"]);
+  });
 });

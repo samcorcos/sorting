@@ -13,10 +13,54 @@ var bubbleSort = function(array){
     }
   }
   return array;
+};
+
+var mergeSort = function(array) {
+  if(array.length <= 1){
+    return array;
+  }
+  else if(array.length = 2){
+    leftSort = mergeSort(div(array)[0]);
+    rightSort = mergeSort(div(array)[1]);
+    merge(leftSort, rightSort)
+  }
+  else{
+    leftSort = mergeSort(div(array)[0]);
+    rightSort = mergeSort(div(array)[1]);
+  }
+};
+
+var div = function(array){
+  var middle = Math.round(array.length/2);
+  var left = []; var right = [];
+  for (i=0;i<array.length;i++) {
+    if (i < middle) {
+      left.push(array[i]);
+    } else {
+      right.push(array[i]);
+    }
+  }
+  return[left, right];
+
 }
 
+var merge = function(left, right){
+  var temp = [];
+  var leftIndex = 0;
+  var rightIndex = 0;
+  while(leftIndex < left.length || rightIndex< right.length ){
+    if(left[leftIndex] <= right[rightIndex] || right[rightIndex] == undefined){
+      temp.push(left[leftIndex]);
+      leftIndex++;
+    }
+    else if (left[leftIndex] > right[rightIndex] || left[leftIndex] == undefined){
+      temp.push(right[rightIndex]);
+      rightIndex++;
+    }
 
-
+  }
+  return temp;
+}
 
 
 
